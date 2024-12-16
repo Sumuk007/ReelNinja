@@ -30,6 +30,9 @@ ALLOWED_HOSTS = [
     'reelninja.onrender.com',
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://reelninja.onrender.com',
+]
 
 # Application definition
 

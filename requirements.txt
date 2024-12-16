@@ -1,5 +1,4 @@
-# inslalling django
-pip install django
+
 
 #installing modules
 pip install instaloader

@@ -1,0 +1,248 @@
+body {
+  min-width: 320px;
+  background-color: white;
+  /* font-family: Arial, sans-serif; */
+  font-family: "Zen Kurenaido", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 18px;
+}
+/* .zen-kurenaido-regular {
+    font-family: "Zen Kurenaido", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  } */
+
+.header {
+  background-color: white;
+  color: black;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tit {
+  margin-left: 7%;
+}
+h1 {
+  margin: 0;
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  /* background-color: white; */
+  background-color: transparent;
+  /* border: 1px solid #ddd; */
+  border-radius: 8px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+}
+#reel_url {
+  width: calc(100% - 94px);
+  height: 48px;
+  border: transparent;
+  border-radius: 25px;
+  padding-left: 18px;
+}
+#reel_url:focus,
+select:focus {
+  outline: none;
+}
+#download {
+  margin-top: 10px;
+  color: white;
+  width: 50%;
+  background: linear-gradient(90deg, #321349, #500037, #850e3a, #481c6a);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+  background-size: 200% 200%;
+  animation: gradient-animation 4s ease-in-out infinite;
+}
+label {
+  font-weight: 500;
+}
+.selection {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-around;
+  align-items: center;
+}
+input[type="radio"] {
+  outline: none;
+}
+#error-message {
+  color: white;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.container {
+  min-width: 320px; /* Minimum width for small devices */
+  max-width: 1200px; /* Maximum width for desktops */
+  margin: 0 auto; /* Center content */
+}
+.main {
+  background: linear-gradient(90deg, #6a3093, #9a0070, #e91e63, #a044ff);
+  color: white;
+  padding: 3%;
+  width: 100%;
+}
+#logo {
+  height: 40px;
+  width: 40px;
+}
+.first {
+  background-color: white;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: none;
+}
+#paste {
+  font-size: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+  padding: 4px 24px;
+  border-radius: 25px;
+  color: white;
+  background-color: #2e2e2e;
+  border: none;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+#paste:hover {
+  background-color: #343434; /* Darker shade for hover effect */
+}
+#paste_image {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+}
+
+h2 {
+  background: linear-gradient(90deg, #6a3093, #9a0070, #e91e63, #a044ff);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: normal;
+}
+p {
+  font-size: larger;
+  font-weight: bold;
+}
+footer p{
+  font-size: large;
+  font-weight: 900;
+}
+/* From Uiverse.io by Xtenso */
+.filter-switch {
+  border: 2px solid white;
+  border-radius: 25px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 34px;
+  width: 200px;
+  overflow: hidden;
+}
+.filter-switch input {
+  display: none;
+}
+.filter-switch label {
+  flex: 1;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 25px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.5s;
+  font-weight: 500;
+  font-size: 14px;
+}
+.filter-switch .background {
+  position: absolute;
+  width: 49%;
+  height: 22px;
+  background-color: white;
+  top: 4px;
+  left: 4px;
+  border-radius: 30px;
+  transition: left 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+#video:checked ~ .background {
+  right: 50%;
+}
+#audio:checked ~ .background {
+  left: 50%;
+}
+#video:checked + label[for="video"] {
+  color: rgb(19, 19, 19);
+  font-weight: bolder;
+}
+#audio:checked + label[for="audio"] {
+  color: rgb(19, 19, 19);
+  font-weight: bolder;
+}
+#video:not(:checked) + label[for="video"],
+#audio:not(:checked) + label[for="audio"] {
+  color: rgb(19, 19, 19);
+  font-weight: bold;
+}
+
+.steps-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.step-content h2 {
+  margin: 0 0 5px;
+  font-size: 16px;
+  color: #444;
+}
+
+.step-content p {
+  margin: 0;
+  line-height: 1.6;
+  color: #666;
+}
+
+footer {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .tit {
+    margin-left: 1%;
+  }
+  .steps img {
+    display: none;
+  }
+  p {
+    font-size:large;
+    font-weight: bold;
+  }
+  footer p{
+    font-size:medium;
+    font-weight: 700;
+  }
+}

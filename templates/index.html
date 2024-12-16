@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Download Instagram Reels or Audio with ReelNinja. Fast, easy, and free Instagram video downloader."
+    />
+    <meta
+      name="keywords"
+      content="download instagram reels, instagram reel downloader, download reel audio, Instagram video downloader"
+    />
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.png">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Zen+Kurenaido&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/static/css/styles.css" />
+    <title>ReelNinja | Download Instagram Reels and Audio</title>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        function checkNetworkStatus() {
+          if (!navigator.onLine) {
+            alert("Your network is off. Please turn it on to continue.");
+          }
+        }
+
+        checkNetworkStatus();
+        window.addEventListener("offline", checkNetworkStatus);
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container header">
+      <!-- <img src="/static/images/logo.png" id="logo" class="me-2" /> -->
+      <h1 class="fw-bolder tit">㊙️ReelNinja</h1>
+      <button id="shareBtn" style="border: none; background: transparent;">
+        <img id="shareimage" src="/static/images/share.png" class="me-4" />
+      </button>
+    </div>
+    <div class="container-fluid main">
+      <div class="container-fluid">
+        <h3 class="text-center pt-2">Welcome to ReelNinja! 🎥🗡️</h3>
+        <p class="text-center">
+          Easily download Instagram Reels or their audio in high quality—fast,
+          free, and hassle-free.<br />Start saving your favorites today! 💨
+        </p>
+      </div>
+      <form method="post" action="{% url 'download' %}">
+        {% csrf_token %}
+        <div class="mb-3 first">
+          <input
+            type="url"
+            id="reel_url"
+            name="reel_url"
+            placeholder="Paste the Link here"
+            required
+          />
+          <button id="paste">
+            <img
+              src="/static/images/paste.png"
+              alt="Paste icon"
+              id="paste_image"
+            />Paste
+          </button>
+        </div>
+        <div class="mb-3 selection">
+          <h5 class="text-center px-4">Select the format:</h5>
+
+          <!-- /* From Uiverse.io by Xtenso */ -->
+          <div id="firstFilter" class="filter-switch">
+            <input
+              type="radio"
+              id="video"
+              name="format"
+              value="video"
+              checked
+              required
+            />
+            <label class="option" for="video">Video</label>
+            <input
+              id="audio"
+              name="format"
+              type="radio"
+              value="audio"
+              required
+            />
+            <label class="option" for="audio">Audio</label>
+            <span class="background"></span>
+          </div>
+        </div>
+        <div id="error-message" class="text-center">
+          {{ error_message }}
+        </div>
+        <div class="mb-3 d-flex justify-content-center align-items-center">
+          <button type="submit" id="download" class="btn">
+            Download
+          </button>
+        </div>
+      </form>
+    </div>
+    <div class="container">
+      <h2 class="text-center mt-4 mb-3" style="font-weight: bold;">
+        How To Download Reels From Instagram
+      </h2>
+      <p class="text-center">
+        Downloading Instagram Reels Made Easy: Follow These 4 Simple Steps
+      </p>
+    </div>
+
+    <div class="container steps">
+      <div class="steps-container">
+        <div class="row mb-4 justify-content-space-between">
+          <div class="col-12 col-sm-8 left">
+            <div>
+              <h2>
+                Step 1:<br />
+                Grab the Link
+              </h2>
+              <p>
+                Start by opening Instagram and finding the Reel you want to
+                download. Tap on the three dots in the corner of the post, and
+                choose “Copy Link.”
+              </p>
+            </div>
+
+            <div class="second mt-sm-5">
+              <img
+                style="width: 100%; height: 50%;"
+                src="/static/images/stepp1.jpg"
+                alt="select desired reel"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="col-sm-4 right">
+            <img
+              class=""
+              style="width: 100%; height: 90%;"
+              src="/static/images/step1.jpg"
+              alt="copy it’s link"
+              loading="lazy"
+            />
+          </div>
+        </div>
+
+        <div class="row align-items-center mb-4">
+          <div class="col-sm-8">
+            <div class="step-icon">
+              <img
+                style="width: 100%; height: 110%;"
+                src="/static/images/step2.jpg"
+                alt="paste the link"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-sm-4">
+            <h2>
+              Step 2:<br />
+              Paste the Link
+            </h2>
+            <p>
+              Navigate to our website and look for the input bar at the top of
+              the page. Simply paste the copied link into the box.
+            </p>
+          </div>
+        </div>
+
+        <div class="row align-items-center mb-4">
+          <div class="col-12 col-sm-4">
+            <h2>
+              Step 3:<br />
+              Pick Your Format
+            </h2>
+            <p>
+              This is where the fun begins! Choose how you want to save the
+              content:
+            </p>
+            <ul>
+              <li>Audio (MP3)</li>
+              <li>Video (MP4)</li>
+            </ul>
+          </div>
+          <div class="col-sm-8 text-center">
+            <div class="step-icon">
+              <img
+                class="img-fluid"
+                src="/static/images/step4.jpg"
+                alt="choose format"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="row align-items-center">
+          <div class="col-sm-8 text-center">
+            <div class="step-icon">
+              <img
+                style="width: 100%; height: 110%;"
+                src="/static/images/step3.jpg"
+                loading="lazy"
+              />
+            </div>
+          </div>
+          <div class="col-12 col-sm-4">
+            <h2>
+              Step 4:<br />
+              Hit Download
+            </h2>
+            <p>
+              Now it’s time to get your content! Click the Download button, and
+              in moments, your file will be ready to save to your device.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Section -->
+    <footer class="fs-6 py-4 mt-5">
+      <div class="container text-center">
+        <!-- Contact Us Section -->
+        <p>
+          Contact Us :
+          <a
+            href="mailto:reelninja.contact@gmail.com"
+            class="text-decoration-none"
+            >reelninja.contact@gmail.com</a
+          >
+        </p>
+
+        <!-- Disclaimer Section -->
+        <p class="mb-2">
+          We are not affiliated with Instagram or Meta. All trademarks and
+          copyrights are the property of their respective owners.
+        </p>
+
+        <!-- Copyright Section -->
+        <p class="mb-0">&copy; 2024 ReelNinja. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.getElementById("paste").addEventListener("click", async () => {
+        try {
+          if (navigator.clipboard) {
+            const text = await navigator.clipboard.readText();
+            document.getElementById("reel_url").value = text;
+          } else {
+            alert("Clipboard API is not supported in this browser.");
+          }
+        } catch (err) {
+          console.error("Failed to read clipboard: ", err);
+          alert(
+            "Failed to paste clipboard content. Please allow clipboard access."
+          );
+        }
+      });
+
+      document
+        .getElementById("shareBtn")
+        .addEventListener("click", async () => {
+          if (navigator.share) {
+            try {
+              await navigator.share({
+                title: "ReelNinja",
+                text: "🎥 Ready to save Instagram Reels? With ReelNinja, download videos or audio in a flash. Click and get started now! 🚀",
+                url: window.location.href,
+              });
+              console.log("Website shared successfully!");
+            } catch (error) {
+              console.error("Error sharing the website:", error);
+            }
+          } else {
+            alert(
+              "Sharing not supported on this browser. Copy the link instead!"
+            );
+            navigator.clipboard
+              .writeText(window.location.href)
+              .then(() => alert("Link copied to clipboard!"))
+              .catch((err) => console.error("Failed to copy link:", err));
+          }
+        });
+    </script>
+  </body>
+</html>

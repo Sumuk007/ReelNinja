@@ -1,0 +1,7 @@
+{
+    "workbench.iconTheme": "vs-minimal",
+    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.editor.decorations.colors": false,
+    "workbench.tree.enableStickyScroll": true,
+    "scm.repositories.sortOrder": "discovery time"
+}

@@ -1,6 +1,0 @@
-
-
-#installing modules
-pip install instaloader
-
-pip install moviepy
